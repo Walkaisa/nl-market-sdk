@@ -1,0 +1,40 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature] "
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We love feature ideas! Tell us what you need and how it would help others using `nl-market-sdk`.
+
+  - type: input
+    id: use-case
+    attributes:
+      label: What problem would this solve?
+      placeholder: e.g. I need access to historical market data...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      placeholder: Describe the feature you'd like to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you tried other workarounds or solutions?
+      placeholder: e.g. I tried fetching data manually from another source...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add links, mockups, or any other context here.
+      placeholder: Any extra info or references?

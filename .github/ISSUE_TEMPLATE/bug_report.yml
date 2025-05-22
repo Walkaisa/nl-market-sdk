@@ -1,0 +1,65 @@
+name: 🐞 Bug Report
+description: Report something that's broken or not working as expected
+title: "[Bug] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please complete the form below to help us understand and reproduce the issue.
+
+  - type: input
+    id: sdk-version
+    attributes:
+      label: SDK Version
+      placeholder: e.g. 1.3.0
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js Version
+      placeholder: e.g. 18.16.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clearly describe the issue you're experiencing.
+      placeholder: What happened? What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Help us reproduce the bug with a clear set of steps.
+      placeholder: |
+        1. Install the package with `npm install nl-market-sdk`
+        2. Use the `fetchMarkets()` method...
+        3. Observe the error
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs or Screenshots
+      description: Paste any error messages, stack traces, or screenshots here.
+      render: shell
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Runtime Environment
+      options:
+        - Node.js (local)
+        - Browser (bundled)
+        - Other (please specify in description)
+    validations:
+      required: true

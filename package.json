@@ -1,0 +1,77 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "nl-market-sdk",
+	"version": "1.0.0",
+	"description": "SDK for NL Market API (TypeScript)",
+	"type": "module",
+	"private": false,
+	"author": "Walkaisa <contact@walkaisa.dev> (http://walkaisa.dev)",
+	"license": "MIT",
+	"homepage": "https://github.com/Walkaisa/nl-market-sdk#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Walkaisa/nl-market-sdk.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Walkaisa/nl-market-sdk/issues"
+	},
+	"keywords": ["neverlose", "neverlose-market", "neverlose-market-api", "nl", "market", "sdk", "api", "api-wrapper", "typescript"],
+	"sideEffects": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint": "biome check src/",
+		"lint:fix": "biome check src/ --fix",
+		"format": "biome format --write .",
+		"check": "biome check . && pnpm test",
+		"test": "vitest run",
+		"test:staged": "vitest run --changed",
+		"build": "tsup",
+		"release": "semantic-release",
+		"prepare": "husky init"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": ["dist"],
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"packageManager": "pnpm@9.15.1",
+	"dependencies": {
+		"zod": "^3.24.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/commit-analyzer": "^13.0.1",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^11.0.2",
+		"@semantic-release/npm": "^12.0.1",
+		"@semantic-release/release-notes-generator": "^14.0.3",
+		"@types/node": "^22.15.17",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.0.0",
+		"msw": "^2.8.2",
+		"semantic-release": "^24.2.3",
+		"tsup": "^8.4.0",
+		"tsx": "^4.19.4",
+		"typescript": "^5.8.3",
+		"vite-tsconfig-paths": "^5.1.4",
+		"vitest": "^3.1.3"
+	},
+	"lint-staged": {
+		"**/*.{ts,tsx,js,jsx,cts,mts}": ["pnpm format", "pnpm lint", "pnpm test:staged"],
+		"**/*.{json,yml,yaml,md}": ["pnpm format"]
+	}
+}
