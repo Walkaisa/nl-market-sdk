@@ -4,6 +4,8 @@ import { MarketError } from "@/core/errors.js";
 import { http } from "@/core/http.js";
 import { Signer } from "@/core/signer.js";
 
+import { EndpointFlags } from "@/lib/FlagSet.js";
+
 import { getBalanceSpec } from "@/specs/getBalance.js";
 import { getPricesSpec } from "@/specs/getPrices.js";
 import { giftProductSpec } from "@/specs/giftProduct.js";
@@ -13,20 +15,6 @@ import { isUserInvitedSpec } from "@/specs/isUserInvited.js";
 import { setResellerPricesSpec } from "@/specs/setResellerPrices.js";
 import { transferMoneySpec } from "@/specs/transferMoney.js";
 import type { Endpoint, ReqOf, ResOf } from "@/specs/types.js";
-
-import { EndpointFlags } from "@/lib/FlagSet.js";
-
-/**
- * Type utility that determines if a type has no properties.
- * @template T - Type to check for emptiness
- */
-export type IsEmpty<T> = keyof T extends never ? true : false;
-
-/**
- * Helper type that defines function call arguments based on request body type.
- * @template Req - Request body type
- */
-export type CallArgs<Req> = IsEmpty<Req> extends true ? [] : [body: Req];
 
 /** Configuration options for the MarketClient. */
 export type ClientOptions = {
