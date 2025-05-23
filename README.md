@@ -14,7 +14,7 @@
             <img src="https://img.shields.io/npm/v/nl-market-sdk" alt="NPM Version">
         </a>
         <a href="https://github.com/Walkaisa/nl-market-sdk">
-            <img src="https://img.shields.io/npm/dm/nl-market-sdk" alt="NPM Downloads">
+            <img src="https://img.shields.io/npm/dt/nl-market-sdk" alt="NPM Downloads">
         </a>
         <a href="https://github.com/Walkaisa/nl-market-sdk/commits/main">
             <img src="https://img.shields.io/github/last-commit/Walkaisa/nl-market-sdk.svg?logo=github&logoColor=ffffff" alt="Latest Commit">
